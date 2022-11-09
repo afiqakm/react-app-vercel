@@ -17,7 +17,7 @@ export default function AddTabButton() {
         <button
           type="button"
           onClick={openModal}
-          className="btn btn-accent"
+          className="btn btn-primary"
         >
           ADD TAB
         </button>

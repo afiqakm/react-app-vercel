@@ -1,13 +1,15 @@
 
 import './App.css';
 import Hero from './components/Hero';
-import ItemTab from './components/ItemTab';
+import TaskBoard from './components/TaskTest/TaskBoard';
+
 
 function App() {
   return (
     <div className="flex flex-col items-center m-auto">
         <Hero/>
-        <ItemTab/>
+        <div className="divider py-5">Task List</div>
+        <TaskBoard/>
     </div>
   );
 }
