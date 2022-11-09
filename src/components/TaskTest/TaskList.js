@@ -37,21 +37,21 @@ function Task({ task, onChange, onDelete }) {
             <>
                 <button
                     onClick={() => setIsEditing(false)}
-                    className="btn btn-secondary"
+                    className="btn btn-info"
                 >Save</button>
             </>
         )
     } else {
         taskContent = (
             <>
-                {task.text}
+                <p className='truncate max-w-sm'>{task.text}</p> 
             </>
         );
         buttonContent = (
             <>
                 <button
                     onClick={() => setIsEditing(true)}
-                    className="btn btn-secondary"
+                    className="btn btn-info"
                 >Edit</button>
             </>
         )
@@ -100,9 +100,9 @@ function Task({ task, onChange, onDelete }) {
         )
     }
     return (
-        <div className='flex flex-col w-full py-5 '>
-            <div className="card w-full bg-base-300 shadow-xl">
-                <div className="flex flex-row flex-wrap card-body items-center justify-between">
+        <div className='flex flex-col w-full py-1 '>
+            <div className="card w-full bg-base-300 shadow-sm">
+                <div className="flex flex-row flex-wrap card-body items-center justify-center lg:justify-between">
                     <div className='flex flex-row gap-4 items-center'>
                         {checkedContent}
                     </div>
@@ -110,8 +110,8 @@ function Task({ task, onChange, onDelete }) {
                         {buttonContent}
                         <button
                             onClick={() => onDelete(task.id)}
-                            className="btn btn-circle bg-red-800 hover:bg-red-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                            className="btn btn-error">
+                                Delete
                         </button>
                     </div>
                 </div>

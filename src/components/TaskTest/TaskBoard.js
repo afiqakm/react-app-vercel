@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AddTask from './AddTask.js';
 import TaskList from './TaskList.js';
+import ScrollDown from './ScrollDown.js';
 
 export default function TaskBoard() {
     const [tasks, setTasks] = useState(initialTasks);
@@ -35,19 +36,22 @@ export default function TaskBoard() {
     return (
         <>
             <AddTask onAddTask={handleAddTask} />
-            <div className='tab-content bg-primary-focused mt-5 p-5 rounded-lg w-full max-w-2xl'>
+            <div className='relative tab-content bg-base-200 mt-5 p-5 rounded-lg mx-5 h-120 min-h-full overflow-y-auto scrollbar-hide lg:w-full max-w-xl '>
                 <TaskList
                     tasks={tasks}
                     onChangeTask={handleChangeTask}
                     onDeleteTask={handleDeleteTask}
                 />
+
+                    <ScrollDown />
+
             </div>
 
         </>
     );
 }
 
-let nextId = 2  ;
+let nextId = 2;
 const initialTasks = [
     { id: 0, text: 'Dinner with family', done: false },
     { id: 1, text: 'Wash car', done: false },
