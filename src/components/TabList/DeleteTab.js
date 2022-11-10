@@ -1,6 +1,12 @@
 import { useState } from 'react'
 
 export default function DeleteTab({ onDeleteTab, tabs }) {
+    const [tab, setTabs] = useState(tabs)
+
+    function handleDeleteTab(tabId) {
+        setTabs(tab.filter((t) => t.id !== tabId));
+    }
+
     return (
         <>
             <label htmlFor="my-modal-5" className="btn btn-primary">Delete Tab</label>
@@ -16,17 +22,18 @@ export default function DeleteTab({ onDeleteTab, tabs }) {
                         </label>
                         <div className='flex flex-row  w-full justify-between max-w-lg gap-5 '>
                             <select className="shrink select select-bordered w-full max-w-lg">
-                                <option disabled selected>Pick one</option>
+                                
                                 {tabs.map((tab) => (
                                     <option
                                         key={tab.id}
-
+                                        value={tab.id}
                                     >{tab.text}</option>
                                 ))}
                             </select>
                             <label
                                 htmlFor="my-modal-5"
                                 className='btn btn-error '
+                                onClick={(e) => handleDeleteTab(1)}
                             >
                                 Delete!
                             </label>

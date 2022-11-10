@@ -3,27 +3,15 @@ import './App.css';
 import Hero from './components/Hero';
 import TaskBoard from './components/TaskList/TaskBoard';
 import TabBoard from './components/TabList/TabBoard';
-import { useEffect } from 'react'
-import { themeChange } from 'theme-change'
+
 import ThemeSwitch from './components/ThemeSwitch';
 
 function App() {
-
-  useEffect(() => {
-    themeChange(false);
-  }, []);
-
   return (
     <div id="top" className="snap-both flex flex-col items-center m-auto gap-5">
       <Hero />
       <ThemeSwitch/>
-      <select className="gradientselect" data-choose-theme>
-        <option disabled value="">
-          Pick a theme
-        </option>
-        <option value="cupcake">cupcake</option>
-        <option value="coffee">coffee</option>
-      </select>
+      
       <div className="snap-end divider py-5">
         <div className='indicator'>
           <h1 className='font-bold text-xl pb-3'>Task List</h1>

@@ -5,7 +5,6 @@ import TabList from './TabList';
 
 export default function TabBoard() {
     const [tab, setTabs] = useState(initialTab)
-
     function handleAddTab(text) {
         setTabs([
             ...tab,
@@ -13,6 +12,7 @@ export default function TabBoard() {
                 id: nextId++,
                 text: text,
                 content: {
+                    cId: ncId++,
                     detail: 'Content ' + nextContent++,
                 }
             },
@@ -38,13 +38,16 @@ export default function TabBoard() {
     );
 }
 
+
 let nextId = 2;
+let ncId = 102;
 let nextContent = 3;
 const initialTab = [
     {
         id: 0,
         text: 'Work',
         content: {
+            cId: 100,
             detail: 'Content 1',
         }
     },
@@ -52,6 +55,7 @@ const initialTab = [
         id: 1,
         text: 'Personal',
         content: {
+            cId: 101,
             detail: 'Content 2',
         }
     },

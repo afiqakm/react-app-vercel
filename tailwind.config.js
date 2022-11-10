@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   daisyui: {
-    themes: ["cupcake", "coffee"],
+    themes: ["cupcake", "coffee",],
   },
   plugins: [require("daisyui"), require('tailwind-scrollbar-hide')],
 }

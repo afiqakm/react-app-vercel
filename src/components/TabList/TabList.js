@@ -37,6 +37,7 @@ export default function TabList({ tabs, onDeleteTab, onChangeTab }) {
             >
                 {tabs.map((tab) => (
                     <Tab.Panel
+                        key={tab.content.cId}
                         className={classNames(
                             'rounded-xl bg-base-300 p-4 m-4',
                             'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2'
