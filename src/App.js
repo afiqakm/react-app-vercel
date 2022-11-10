@@ -11,14 +11,14 @@ function App() {
       <div className="divider py-5">
         <div className='indicator'>
           <h1 className='font-bold text-xl pb-3'>Task List</h1> 
-          <span className="indicator-item indicator-bottom indicator-center badge badge-info">debug</span>
+          <span className="indicator-item indicator-bottom indicator-center badge badge-info">BETA</span>
         </div>
       </div>
       <TaskBoard />
       <div className="divider py-5">
         <div className='indicator'>
           <h1 className='font-bold text-xl pb-3'>Tab List</h1>
-          <span className="indicator-item indicator-bottom indicator-center badge badge-error">underway</span>
+          <span className="indicator-item indicator-bottom indicator-center badge badge-error">PRE-ALPHA</span>
         </div>
       </div>
     </div>
