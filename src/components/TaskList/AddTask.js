@@ -4,7 +4,7 @@ export default function AddTask({ onAddTask }) {
     const [text, setText] = useState('');
     return (
         <>
-            <div className='flex flex-col w-full px-5 m-auto  lg:max-w-lg justify-between'>
+            <div className='flex flex-col w-full px-5 m-auto  md:max-w-lg justify-between'>
                 <div className="form-control w-full max-w-lg ">
                     <label className="label">
                         <span className="label-text">What is your Task?</span>
@@ -28,8 +28,6 @@ export default function AddTask({ onAddTask }) {
                         </button>
                     </div>               
                 </div>
-
-
             </div>
         </>
     );

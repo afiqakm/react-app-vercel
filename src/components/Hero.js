@@ -1,6 +1,7 @@
 import React from 'react'
 import {ReactComponent as Logo } from '../assets/images/afiq.svg'
 
+
 export default function Hero() {
   return (
     <div>
