@@ -26,7 +26,7 @@ export default function ThemeSwitch() {
                 <Switch
                     data-set-theme={enabled ? 'cupcake' : 'coffee'}
                     data-act-class="ACTIVECLASS"
-                    checked={enabled}
+                    defaultChecked={enabled}
                     onChange={setEnabled}
                     className={'toggle'}
                 >
