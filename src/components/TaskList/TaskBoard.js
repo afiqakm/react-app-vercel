@@ -42,11 +42,8 @@ export default function TaskBoard() {
                     onChangeTask={handleChangeTask}
                     onDeleteTask={handleDeleteTask}
                 />
-
-                    <ScrollDown />
-
+            <ScrollDown /> 
             </div>
-
         </>
     );
 }

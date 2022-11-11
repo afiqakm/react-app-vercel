@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Tab } from '@headlessui/react'
 
 
@@ -9,27 +9,31 @@ function classNames(...classes) {
 }
 
 export default function TabList({ tabs, onDeleteTab, onChangeTab }) {
+
     return (
         <Tab.Group>
-            <Tab.List className=" tabs tabs-boxed object-fit w-fit">
-                {tabs.map((tab) => (
-                    <>
-                        <Tab
-                            key={tab.id}
-                            className={({ selected }) =>
-                                classNames(
-                                    'tab tab-lg justify-between gap-4',
-                                    selected
-                                        ? 'tab-active'
-                                        : ''
-                                )
-                            }
-                        >
-                            {tab.text}
-                        </Tab>
-                    </>
-                ))}
-            </Tab.List>
+            <div className='flex flex-row justify-between w-full max-w-xl'>
+                <Tab.List className=" tabs tabs-boxed object-fit w-fit">
+                    {tabs.map((tab) => (
+                        <>
+                            <Tab
+                                key={tab.id}
+                                className={({ selected }) =>
+                                    classNames(
+                                        'tab tab-lg justify-between gap-4',
+                                        selected
+                                            ? 'tab-active'
+                                            : ''
+                                    )
+                                }
+                            >
+                                {tab.text}
+                            </Tab>
+                        </>
+                    ))}
+                </Tab.List>
+                <button className='btn btn-error' >X</button>
+            </div>
             <Tab.Panels
                 className={classNames(
                     'mx-auto h-120 bg-base-200 w-full max-w-xl p-3 rounded-md justify-center'

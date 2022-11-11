@@ -5,21 +5,12 @@ import { themeChange } from 'theme-change'
 
 export default function ThemeSwitch() {
     const [enabled, setEnabled] = useState(false)
-    let switchText;
 
     useEffect(() => {
         themeChange(false);
-        const data = localStorage.getItem('themeState');
         const data1 = localStorage.getItem('theme');
         if (data1 === 'coffee') setEnabled(true);
-    }, [enabled]);
-
-
-    useEffect(() => {
-        localStorage.setItem('themeState', JSON.stringify(enabled));
     }, []);
-
-
 
     return (
         <>

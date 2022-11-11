@@ -3,10 +3,10 @@ import './ScrollDown.scss'
 
 export default function ScrollDown() {
     return (
-        <div class="container">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
+        <div className="container">
+            <div className="chevron"></div>
+            <div className="chevron"></div>
+            <div className="chevron"></div>
         </div>
     )
 }

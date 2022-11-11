@@ -5,6 +5,7 @@ import TabList from './TabList';
 
 export default function TabBoard() {
     const [tab, setTabs] = useState(initialTab)
+    
     function handleAddTab(text) {
         setTabs([
             ...tab,
@@ -19,21 +20,13 @@ export default function TabBoard() {
         ]);
     }
 
-    function handleDeleteTab(tabsId) {
-        setTabs(tab.filter((t) => t.id !== tabsId));
-    }
-
-
     return (
         <>
             <div className='flex flex-row gap-5'>
                 <AddTab onAddTab={handleAddTab} />
-                <DeleteTab onDeleteTab={handleDeleteTab} tabs={tab}/>
+                <DeleteTab tabs={tab}/>
             </div>
-
-            <TabList
-                tabs={tab}
-            />
+            <TabList tabs={tab}/>
         </>
     );
 }
