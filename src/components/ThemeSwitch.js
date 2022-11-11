@@ -4,18 +4,20 @@ import { themeChange } from 'theme-change'
 
 
 export default function ThemeSwitch() {
-    let [enabled, setEnabled] = useState(false)
+    const [enabled, setEnabled] = useState(false)
+    let switchText;
 
     useEffect(() => {
         themeChange(false);
         const data = localStorage.getItem('themeState');
-        if (data === true) setEnabled(true);
-    }, []);
+        const data1 = localStorage.getItem('theme');
+        if (data1 === 'coffee') setEnabled(true);
+    }, [enabled]);
 
 
     useEffect(() => {
         localStorage.setItem('themeState', JSON.stringify(enabled));
-    }, [enabled]);
+    }, []);
 
 
 
@@ -26,12 +28,12 @@ export default function ThemeSwitch() {
                 <Switch
                     data-set-theme={enabled ? 'cupcake' : 'coffee'}
                     data-act-class="ACTIVECLASS"
-                    defaultChecked={enabled}
+                    checked={enabled}
                     onChange={setEnabled}
                     className={'toggle'}
-                >
+                    value={'cupcake'}
+                />
 
-                </Switch>
                 <span className=' align-center'>coffee</span>
             </div>
         </>
