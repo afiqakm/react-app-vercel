@@ -3,14 +3,20 @@ import { Switch } from '@headlessui/react'
 import { themeChange } from 'theme-change'
 
 
-
-
 export default function ThemeSwitch() {
-    const [enabled, setEnabled] = useState(false)
+    let [enabled, setEnabled] = useState(false)
 
     useEffect(() => {
         themeChange(false);
+        const data = localStorage.getItem('themeState');
+        if (data === true) setEnabled(true);
     }, []);
+
+
+    useEffect(() => {
+        localStorage.setItem('themeState', JSON.stringify(enabled));
+    }, [enabled]);
+
 
 
     return (
@@ -18,14 +24,13 @@ export default function ThemeSwitch() {
             <div className="flex flex-row gap-3 py-2">
                 <span className=' align-center'>cupcake</span>
                 <Switch
-                    data-toggle-theme='cupcake,coffee'
+                    data-set-theme={enabled ? 'cupcake' : 'coffee'}
                     data-act-class="ACTIVECLASS"
                     checked={enabled}
                     onChange={setEnabled}
-                    className={'toggle'
-                    }
+                    className={'toggle'}
                 >
-                    
+
                 </Switch>
                 <span className=' align-center'>coffee</span>
             </div>
