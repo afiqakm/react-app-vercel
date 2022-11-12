@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import AddTab from './AddTab';
-import DeleteTab from './DeleteTab';
 import TabList from './TabList';
+import { Switch } from '@headlessui/react'
 
 export default function TabBoard() {
     const [tab, setTabs] = useState(initialTab)
-    
+    const [enabled, setEnabled] = useState(false)
+
     function handleAddTab(text) {
         setTabs([
             ...tab,
@@ -20,17 +21,31 @@ export default function TabBoard() {
         ]);
     }
 
+    function handleDeleteTab(tabId) {
+        setTabs(tab.filter((t) => t.id !== tabId));
+        console.log(tabId)
+    }
+
     return (
         <>
-            <div className='flex flex-row gap-5'>
+            <div className='flex flex-row justify-between w-full max-w-lg'>
                 <AddTab onAddTab={handleAddTab} />
-                <DeleteTab tabs={tab}/>
+                <div className="form-control">
+                    <label className="label cursor-pointer gap-3">
+                        <span className="label-text">Delete Tab</span>
+                        <Switch
+                            checked={enabled}
+                            onChange={setEnabled}
+                            className={'toggle'}
+                        />
+                    </label>
+                </div>
             </div>
-            <TabList tabs={tab}/>
+
+            <TabList tabs={tab} onDeleteTab={handleDeleteTab} showDelete={enabled} />
         </>
     );
 }
-
 
 let nextId = 2;
 let ncId = 102;

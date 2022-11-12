@@ -4,6 +4,26 @@ import {  useState } from 'react'
 export default function AddTab({ onAddTab }) {
 
   const [text, setText] = useState('');
+  const [errText, setErrText] = useState('');
+  const [error, setError] = useState(false);
+
+  function handleClick(text) {
+    if (text.trim().length !== 0) {
+      if ((text.length < 10)) {
+        onAddTab(text)
+        setError(false)
+
+      } else {
+        console.log(text.length)
+        setError(true)
+        setErrText('value are too long! more than 10 character.')
+      }
+    }
+    else {
+      setError(true)
+      setErrText('Please enter a value!')
+    }
+  };
 
   return (
     <>
@@ -27,17 +47,20 @@ export default function AddTab({ onAddTab }) {
                 className="input input-bordered w-full max-w-lg"
               />
               <label
-                htmlFor="my-modal-4"
+                
                 className='btn btn-primary '
                 onClick={() => {
                   setText('');
-                  onAddTab(text);
-
+                  handleClick(text);
                 }}>
                 Add
               </label>
             </div>
           </div>
+          <label className="label">
+            {error && <span className="label-text text-error">{errText}</span>}
+            {!error && <span className="label-text text-base-100">whitespace</span>}
+          </label>
         </label>
       </label>
     </>

@@ -22,7 +22,7 @@ function App() {
       <div className="divider py-5">
         <div className='indicator'>
           <h1 className='font-bold text-xl pb-3'>Tab List</h1>
-          <span className="indicator-item indicator-bottom indicator-center badge badge-warning">ALPHA</span>
+          <span className="indicator-item indicator-bottom indicator-center badge badge-info">BETA</span>
         </div>
       </div>
       <TabBoard />
