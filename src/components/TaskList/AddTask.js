@@ -8,11 +8,14 @@ export default function AddTask({ onAddTask }) {
 
     function handleClick(text) {
         if (text.trim().length !== 0) {
-            if ((text.length < 20)) {
+            if (text.length < 20) {
                 onAddTask(text)
                 setError(false)
                 setSuccess(true)
                 setErrText('New task added!')
+                setTimeout(() => {
+                    setSuccess(false)
+                }, 2000);
             } else {
                 console.log(text.length)
                 setError(true)
@@ -25,7 +28,8 @@ export default function AddTask({ onAddTask }) {
             setSuccess(false)
             setErrText('Please enter a value!')
         }
-    };
+    }
+
     return (
         <>
             <div className='flex flex-col w-full px-5 m-auto  md:max-w-lg justify-between'>
@@ -53,8 +57,8 @@ export default function AddTask({ onAddTask }) {
                     </div>
                     <label className="label">
                         {error && <span className="label-text text-error">{errText}</span>}
-                        {success && <span className="label-text text-success transition-opacity duration-1000 ease-out opacity-100 after:opacity-0">{errText}</span>}
-                        {!error && <span className="label-text text-base-100">whitespace</span>}
+                        {success && <span className="label-text text-success animate-fadeout">{errText}</span>}
+                        {!error && !success && <span className="label-text text-base-100">whitespace</span>}
                     </label>
                 </div>
             </div>

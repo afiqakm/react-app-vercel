@@ -15,6 +15,10 @@ export default function AddTab({ onAddTab }) {
         setError(false)
         setSuccess(true)
         setErrText('New tab added!')
+        setTimeout(() => {
+          setSuccess(false)
+        }, 2000);
+        
       } else {
         console.log(text.length)
         setError(true)
@@ -56,6 +60,7 @@ export default function AddTab({ onAddTab }) {
                 onClick={() => {
                   setText('');
                   handleClick(text);
+                  
                 }}>
                 Add
               </label>
@@ -63,7 +68,7 @@ export default function AddTab({ onAddTab }) {
           </div>
           <label className="label">
             {error && <span className="label-text text-error">{errText}</span>}
-            {success && <span className="label-text text-success">{errText}</span>}
+            {success && <span className="label-text text-success animation-fadeout">{errText}</span>}
             {!error && <span className="label-text text-base-100">whitespace</span>}
           </label>
         </label>
