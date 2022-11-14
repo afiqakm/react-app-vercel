@@ -6,21 +6,25 @@ export default function AddTab({ onAddTab }) {
   const [text, setText] = useState('');
   const [errText, setErrText] = useState('');
   const [error, setError] = useState(false);
+  const [success,setSuccess] = useState(false);
 
   function handleClick(text) {
     if (text.trim().length !== 0) {
       if ((text.length < 10)) {
         onAddTab(text)
         setError(false)
-
+        setSuccess(true)
+        setErrText('New tab added!')
       } else {
         console.log(text.length)
         setError(true)
+        setSuccess(false)
         setErrText('value are too long! more than 10 character.')
       }
     }
     else {
       setError(true)
+      setSuccess(false)
       setErrText('Please enter a value!')
     }
   };
@@ -59,6 +63,7 @@ export default function AddTab({ onAddTab }) {
           </div>
           <label className="label">
             {error && <span className="label-text text-error">{errText}</span>}
+            {success && <span className="label-text text-success">{errText}</span>}
             {!error && <span className="label-text text-base-100">whitespace</span>}
           </label>
         </label>

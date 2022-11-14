@@ -4,21 +4,25 @@ export default function AddTask({ onAddTask }) {
     const [text, setText] = useState('');
     const [errText, setErrText] = useState('');
     const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     function handleClick(text) {
         if (text.trim().length !== 0) {
             if ((text.length < 20)) {
                 onAddTask(text)
                 setError(false)
-                
+                setSuccess(true)
+                setErrText('New task added!')
             } else {
                 console.log(text.length)
                 setError(true)
+                setSuccess(false)
                 setErrText('value are too long!')
             }
         }
         else {
             setError(true)
+            setSuccess(false)
             setErrText('Please enter a value!')
         }
     };
@@ -49,6 +53,7 @@ export default function AddTask({ onAddTask }) {
                     </div>
                     <label className="label">
                         {error && <span className="label-text text-error">{errText}</span>}
+                        {success && <span className="label-text text-success transition-opacity duration-1000 ease-out opacity-100 after:opacity-0">{errText}</span>}
                         {!error && <span className="label-text text-base-100">whitespace</span>}
                     </label>
                 </div>
