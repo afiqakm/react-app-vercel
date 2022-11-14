@@ -12,7 +12,7 @@ export default function TabList({ tabs, onDeleteTab, showDelete }) {
 
     return (
         <Tab.Group>
-            <div className='flex flex-row justify-center w-full max-w-xl'>
+            <div className='flex flex-row justify-start w-full max-w-xl'>
                 <Tab.List className=" flex flex-nowrap tabs tabs-boxed w-fit h-fit overflow-x-auto scrollbar-hide">
                     {tabs.map((tab) => (
                         <TabItem

@@ -10,27 +10,27 @@ function App() {
   return (
     <div id="top" className="snap-both flex flex-col items-center m-auto gap-5">
       <Hero />
-      <ThemeSwitch/>
-      
-      <div className="snap-end divider py-5">
-        <div className='indicator'>
-          <h1 className='font-bold text-xl pb-3'>Task List</h1>
-          <span className="indicator-item indicator-bottom indicator-center badge badge-info">BETA</span>
-        </div>
+      <ThemeSwitch />
+
+      <div className="snap-end divider py-6">
+        <h1 className='font-bold text-xl'>Task List</h1>
+
+        <div 
+        className='tooltip tooltip-info tooltip-bottom' 
+        data-tip="entry value can still be duplicate">
+          <span className="badge badge-info cursor-pointer ">BETA</span>
       </div>
+      </div>
+
       <TaskBoard />
-      <div className="divider py-5">
-        <div className='indicator'>
-          <h1 className='font-bold text-xl pb-3'>Tab List</h1>
-          <span className="indicator-item indicator-bottom indicator-center badge badge-info">BETA</span>
-        </div>
+      <div className="snap-end divider py-6">
+        <h1 className='font-bold text-xl'>Tab List</h1>
+        <span className="badge badge-info cursor-pointer">BETA</span>
       </div>
       <TabBoard />
-      <div className="divider py-5">
-        <div className='indicator'>
-          <h1 className='font-bold text-xl pb-3'>Tab + Task</h1>
-          <span className="indicator-item indicator-bottom indicator-center badge badge-error">PRE-ALPHA</span>
-        </div>
+      <div className="snap-end divider py-6">
+        <h1 className='font-bold text-xl'>Task + Tab List</h1>
+        <span className="badge badge-error cursor-pointer">PRE-ALPHA</span>
       </div>
       <div className='w-full max-w-5xl h-120'>
         <div className="hero min-h-full bg-base-200">

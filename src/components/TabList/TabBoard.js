@@ -28,7 +28,7 @@ export default function TabBoard() {
 
     return (
         <>
-            <div className='flex flex-row justify-between w-full max-w-lg'>
+            <div className='flex flex-row justify-between w-full max-w-xl'>
                 <AddTab onAddTab={handleAddTab} />
                 <div className="form-control">
                     <label className="label cursor-pointer gap-3">
