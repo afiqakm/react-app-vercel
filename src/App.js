@@ -6,10 +6,9 @@ import TabBoard from './components/TabList/TabBoard';
 
 import ThemeSwitch from './components/ThemeSwitch';
 import ComponentPlaceholder from './components/ComponentPlaceholder';
-import { ParallaxProvider } from 'react-scroll-parallax';
+
 function App() {
   return (
-    <ParallaxProvider>
       <div id="top" className="snap-both flex flex-col items-center m-auto gap-5">
           
           <Hero />       
@@ -33,7 +32,6 @@ function App() {
         </div>
         <ComponentPlaceholder />
       </div>
-    </ParallaxProvider>
   );
 }
 
