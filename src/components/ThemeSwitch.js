@@ -14,7 +14,7 @@ export default function ThemeSwitch() {
 
     return (
         <>
-            <div className="flex flex-row gap-3 py-2 mt-60">
+            <div className="flex flex-row gap-3 py-2 md:mt-60">
                 <span className=' align-center'>cupcake</span>
                 <Switch
                     data-set-theme={enabled ? 'cupcake' : 'coffee'}
