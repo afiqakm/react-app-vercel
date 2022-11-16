@@ -47,7 +47,7 @@ function TabItem({ tabs, onDelete, delStat }) {
                 key={tabs.id}
                 className={({ selected }) =>
                     classNames(
-                        'tab tab-lg justify-between gap-4',
+                        'flex flex-nowrap tab tab-lg justify-between gap-4 ',
                         selected
                             ? 'tab-active'
                             : ''
@@ -57,7 +57,7 @@ function TabItem({ tabs, onDelete, delStat }) {
                 {tabs.text}
                 {delStat && <button
                     onClick={() => onDelete(tabs.id)}
-                    className="btn w-5 h-5 rounded-full p-0 min-h-0">
+                    className="btn w-5 h-5 rounded-full p-0 min-h-0 ">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>}
 
