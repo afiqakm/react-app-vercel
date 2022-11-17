@@ -6,32 +6,28 @@ import TabBoard from './components/TabList/TabBoard';
 
 import ThemeSwitch from './components/ThemeSwitch';
 import ComponentPlaceholder from './components/ComponentPlaceholder';
+import Divider from './components/Divider';
+import Calculator from './components/Calculator/Calculator';
 
 function App() {
   return (
-      <div id="top" className="snap-both flex flex-col items-center m-auto gap-5">
-          
-          <Hero />       
+    <div id="top" className="snap-both flex flex-col items-center m-auto gap-5">
 
-        <ThemeSwitch />
+      <Hero />
+      <ThemeSwitch />
 
-        <div className="sticky top-0  snap-end divider py-6 z-20 bg-base-100">
-          <h1 className='font-bold text-xl'>Task List</h1>
-          <span className="badge badge-info cursor-pointer ">BETA</span>
-        </div>
+      <Divider title="Task List" status="BETA" />
+      <TaskBoard />
 
-        <TaskBoard />
-        <div className=" sticky top-0 snap-end divider py-6 z-30 bg-base-100">
-          <h1 className='font-bold text-xl'>Tab List</h1>
-          <span className="badge badge-info cursor-pointer">BETA</span>
-        </div>
-        <TabBoard />
-        <div className="sticky top-0 snap-end divider py-6 z-30">
-          <h1 className='font-bold text-xl'>Task + Tab List</h1>
-          <span className="badge badge-error cursor-pointer">PRE-ALPHA</span>
-        </div>
-        <ComponentPlaceholder />
-      </div>
+      <Divider title="Tab List" status="BETA" />
+      <TabBoard />
+
+      <Divider title="Tab + Task List" status="PRE-ALPHA" />
+      <ComponentPlaceholder />
+
+      <Divider title="Calculator Input" status="ALPHA" />
+      <Calculator/>
+    </div>
   );
 }
 
