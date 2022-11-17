@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ComponentPlaceholder() {
   return (
-    <div className='w-full max-w-5xl h-120'>
+    <div className='w-full max-w-xl h-120'>
         <div className="hero min-h-full bg-base-200">
           <div className="hero-content text-center">
             <div className="max-w-md">
