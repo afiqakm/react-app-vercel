@@ -25,7 +25,7 @@ function App() {
       <Divider title="Tab + Task List" status="PRE-ALPHA" />
       <ComponentPlaceholder />
 
-      <Divider title="Calculator Input" status="ALPHA" />
+      <Divider title="Calculator Input" status="BETA" />
       <Calculator/>
     </div>
   );

@@ -1,43 +1,60 @@
 import React from 'react'
 import NumberButton from './NumberButton'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
 
 export default function Calculator() {
     const [number, setNumber] = useState('')
+    const [total, setTotal] = useState('')
 
-    useEffect(() => {
 
+    let addTotal = "";
 
-    }, [])
+    const handleChange = (event) => {
+        //setTotal(event.target.value);
+    };
 
-    let total;
-    function getTotal(num) {
-        //total = total +num.toString();
-    }
+    function handleClick(num) {
+        addTotal += num;
+        //console.log(addTotal)
+        setNumber(number + addTotal)
+    };
 
+    const handleSubmit = () => {
+        setTotal(number);
+    };
+
+    const handleClear = () => {
+        setNumber("")
+    };
 
     return (
-        <div className='flex flex-col w-full max-w-lg item-center justify-center h-120 gap-4'>
-            <input
-                type="text"
-                value={total}
-                placeholder=""
-                className="input input-lg input-bordered input-primary w-full max-w-md mx-auto hover:cursor-pointer" disabled />
-            <div className='max-w-md grid grid-cols-3 gap-1 h-fit w-full mx-auto'>
-                <NumberButton number="1" onClick={getTotal(1)} />
-                <NumberButton number="2" onClick={getTotal(2)} />
-                <NumberButton number="3" onClick={getTotal(3)} />
-                <NumberButton number="4" onClick={getTotal(4)} />
-                <NumberButton number="5" onClick={getTotal(5)} />
-                <NumberButton number="6" onClick={getTotal(6)} />
-                <NumberButton number="7" onClick={getTotal(7)} />
-                <NumberButton number="8" onClick={getTotal(8)} />
-                <NumberButton number="9" onClick={getTotal(9)} />
-                <NumberButton number="0" onClick={getTotal(0)} />
-                <button className="btn btn-outline btn-accent rounded-none col-span-2">Submit</button>
+        <>
+            <p className=' font-bold text-lg max-w-sm w-full mx-auto'>Output: {total}</p>
+            <div className='flex flex-col w-full max-w-lg item-center justify-center h-120 gap-4'>
+                <input
+                    type="text"
+                    value={number}
+                    onChange={handleChange}
+                    placeholder=""
+                    className="input input-lg input-bordered input-primary w-full max-w-md mx-auto text-2xl caret" />
+                <div className='max-w-md grid grid-cols-3 gap-1 h-fit w-full mx-auto'>
+                    <NumberButton number="1" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="2" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="3" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="4" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="5" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="6" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="7" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="8" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="9" onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="." onClickNumber={e => handleClick(e.target.value)} />
+                    <NumberButton number="0" onClickNumber={e => handleClick(e.target.value)} />
+                    <button className="btn btn-outline btn-accent rounded-none" onClick={handleClear}>Clear</button>
+                    <button className="btn btn-outline btn-accent rounded-none col-span-3" onClick={handleSubmit}>Submit</button>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
