@@ -4,7 +4,7 @@ export default function Divider(props) {
     switch (props.status) {
         case 'BETA':
             badge = (
-                <span className="badge badge-info cursor-pointer ">{props.status}</span>
+                <span className="badge badge-info cursor-pointer">{props.status}</span>
             )
             break;
         case 'ALPHA':

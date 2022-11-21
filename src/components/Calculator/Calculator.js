@@ -21,12 +21,13 @@ export default function Calculator() {
         setNumber(number + addTotal)
     };
 
-    const handleSubmit = () => {
-        setTotal(number);
-    };
-
     const handleClear = () => {
         setNumber("")
+    };
+
+    const handleSubmit = () => {
+        setTotal(number);
+        handleClear();
     };
 
     return (
@@ -37,7 +38,7 @@ export default function Calculator() {
                     type="text"
                     value={number}
                     onChange={handleChange}
-                    placeholder=""
+                    placeholder="Input here..."
                     className="input input-lg input-bordered input-primary w-full max-w-md mx-auto text-2xl caret" />
                 <div className='max-w-md grid grid-cols-3 gap-1 h-fit w-full mx-auto'>
                     <NumberButton number="1" onClickNumber={e => handleClick(e.target.value)} />

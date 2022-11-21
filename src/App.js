@@ -3,11 +3,11 @@ import './App.css';
 import Hero from './components/Hero';
 import TaskBoard from './components/TaskList/TaskBoard';
 import TabBoard from './components/TabList/TabBoard';
-
 import ThemeSwitch from './components/ThemeSwitch';
 import ComponentPlaceholder from './components/ComponentPlaceholder';
 import Divider from './components/Divider';
 import Calculator from './components/Calculator/Calculator';
+import Calendar from './components/Calendar/Calendar';
 
 function App() {
   return (
@@ -27,6 +27,9 @@ function App() {
 
       <Divider title="Calculator Input" status="BETA" />
       <Calculator/>
+
+      <Divider title="Calendar Input" status="ALPHA" />
+      <Calendar/>
     </div>
   );
 }
