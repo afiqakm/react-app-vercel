@@ -36,7 +36,7 @@ export default function TaskBoard() {
     return (
         <>
             <AddTask onAddTask={handleAddTask} />
-            <div className='relative tab-content bg-base-200 p-5 rounded-lg mx-5 h-120 min-h-full overflow-y-auto scrollbar-hide md:w-full max-w-xl '>
+            <div className='relative tab-content bg-base-200 p-5 rounded-lg mx-5 h-120 min-h-full overflow-y-auto scrollbar-hide md:w-full max-w-xl'>
                 <TaskList
                     tasks={tasks}
                     onChangeTask={handleChangeTask}

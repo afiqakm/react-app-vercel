@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiOutlineCalendar } from "react-icons/ai";
-import { Popover } from '@headlessui/react'
 
 export default function Calendar() {
     return (

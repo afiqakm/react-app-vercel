@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       spacing: {
         '120': '410px',
+        '150': '550px',
       },
       keyframes: {
         wiggle: {
@@ -23,13 +24,24 @@ module.exports = {
           '100%' : {
             transform: 'rotateX(-180deg)',
             transform: 'rotateY(-180deg)',
-          }
+          },
+        },
+        reverseflip:{
+          '0%': {
+            transform: 'rotateX(-180deg)',
+            transform: 'rotateY(-180deg)',
+          },
+          '100%' : {           
+            transform: 'rotateX(0deg)',
+            transform: 'rotateY(0deg)',
+          },
         }
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
-        fadeout: 'fadeout 1.5s ease-out forwards',
+        fadeout: 'fadeout 1.5s ease-in forwards',
         flip: 'flip 0.5s ease-out forwards',
+        reverseflip: 'reverseflip 0.5s ease-out forwards',
       }
     }
   },

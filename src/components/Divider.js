@@ -1,32 +1,44 @@
 
 export default function Divider(props) {
+
+
+
     let badge;
     switch (props.status) {
         case 'BETA':
             badge = (
-                <span className="badge badge-info cursor-pointer">{props.status}</span>
+                <div className="tooltip tooltip-info" data-tip="Click here to view changelog">
+                    <span className="badge badge-info cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
+                </div>
             )
             break;
         case 'ALPHA':
             badge = (
-                <span className="badge badge-warning cursor-pointer ">{props.status}</span>
+                <div className="tooltip tooltip-warning" data-tip="Click here to view changelog">
+                    <span className="badge badge-warning cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
+                </div>
             )
             break;
         case 'PRE-ALPHA':
             badge = (
-                <span className="badge badge-error cursor-pointer ">{props.status}</span>
+                <div className="tooltip tooltip-error" data-tip="This project are not yet started">
+                    <span className="badge badge-error cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
+                </div>
             )
             break;
         default:
-            badge =(
-                <span className="badge badge-primary cursor-pointer ">{props.status}</span>
+            badge = (
+                <div className="tooltip tooltip-info" data-tip="Click here to view changelog">
+                    <span className="badge badge-primary cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
+                </div>
             )
     }
 
 
     return (
-        <div className="sticky top-0  snap-end divider py-6 z-20 bg-base-100">
+        <div className="sticky top-0  snap-end divider py-6 z-30 bg-base-100">
             <h1 className='font-bold text-xl'>{props.title}</h1>
+
             {badge}
         </div>
     )
