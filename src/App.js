@@ -13,9 +13,12 @@ import ChangelogP1 from './components/Changelog/Changelog-p1';
 
 function App() {  
   const [Project, setProject] = useState(false)
+  const [tip, setTip] = useState(false)
+
 
   function handleClick() {
     setProject(!Project);
+    setTip(!tip);
     //console.log('button clicked');
   }
 
@@ -26,17 +29,17 @@ function App() {
       <Hero />
       <ThemeSwitch />
 
-      <Divider title="Task List" status="BETA" onClickBadge={handleClick} />
+      <Divider title="Task List" status="BETA" onClickBadge={handleClick} dataTip={tip? "click again to view component." : "click here to view changelog"}/>
       <TaskBoard/>
       {Project? <ChangelogP1/> : null}
       
-      <Divider title="Tab List" status="BETA" />
+      <Divider title="Tab List" status="BETA" dataTip={"changelog not created yet"} />
       <TabBoard />
 
       <Divider title="Tab + Task List" status="PRE-ALPHA" />
       <ComponentPlaceholder />
 
-      <Divider title="Calculator Input" status="BETA" />
+      <Divider title="Calculator Input" status="BETA" dataTip={"changelog not created yet"} />
       <Calculator/>
 
       <Divider title="Calendar Input" status="ALPHA" />

@@ -1,20 +1,18 @@
 
 export default function Divider(props) {
 
-
-
     let badge;
     switch (props.status) {
         case 'BETA':
             badge = (
-                <div className="tooltip tooltip-info" data-tip="Click here to view changelog">
+                <div className="tooltip tooltip-info" data-tip={props.dataTip}>
                     <span className="badge badge-info cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
                 </div>
             )
             break;
         case 'ALPHA':
             badge = (
-                <div className="tooltip tooltip-warning" data-tip="Click here to view changelog">
+                <div className="tooltip tooltip-warning" data-tip="changelog not created yet">
                     <span className="badge badge-warning cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
                 </div>
             )
@@ -28,7 +26,7 @@ export default function Divider(props) {
             break;
         default:
             badge = (
-                <div className="tooltip tooltip-info" data-tip="Click here to view changelog">
+                <div className="tooltip tooltip-info" data-tip="changelog not created yet">
                     <span className="badge badge-primary cursor-pointer" onClick={props.onClickBadge}>{props.status}</span>
                 </div>
             )
