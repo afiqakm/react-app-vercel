@@ -29,10 +29,10 @@ function App() {
       <Hero />
       <ThemeSwitch />
 
-      <Divider title="Task List" status="BETA" onClickBadge={handleClick} dataTip={tip? "click again to view component." : "click here to view changelog"}/>
+      {/* <Divider title="Task List" status="BETA" onClickBadge={handleClick} dataTip={tip? "click again to view component." : "click here to view changelog"}/>
       <TaskBoard/>
       {Project? <ChangelogP1/> : null}
-      
+
       <Divider title="Tab List" status="BETA" dataTip={"changelog not created yet"} />
       <TabBoard />
 
@@ -43,7 +43,17 @@ function App() {
       <Calculator/>
 
       <Divider title="Calendar Input" status="ALPHA" />
-      <Calendar/>
+      <Calendar/> */}
+
+            <iframe
+                src='https://smcv.doubleplayground.com/'
+                width='100%'
+                height='100%'
+                allowFullScreen
+                scrolling='no'
+                allowVr
+                title='SMCV VR Experience'
+            />
     </div>
   );
 }
