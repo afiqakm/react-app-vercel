@@ -44,7 +44,7 @@ function App() {
 
       <Divider title="Calendar Input" status="ALPHA" />
       <Calendar/> */}
-
+          <div className="w-[80vw] h-[70vh]">
             <iframe
                 src='https://smcv.doubleplayground.com/'
                 width='100%'
@@ -53,7 +53,8 @@ function App() {
                 scrolling='no'
                 allowVr
                 title='SMCV VR Experience'
-            />
+                />
+          </div>
     </div>
   );
 }
